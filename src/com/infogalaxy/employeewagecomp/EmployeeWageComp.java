@@ -7,6 +7,9 @@ public class EmployeeWageComp {
 		// TODO Auto-generated method stub
 		
 		int attendance = 0;
+		int dailyWage = 0;
+		final int WAGE_PER_HR = 20;
+		final int FULL_DAY_HR = 8;
 		
 		System.out.println("Welcome to Employee Wage Computation Program");
 		
@@ -20,6 +23,9 @@ public class EmployeeWageComp {
 		else
 		{
 			System.out.println("Employee Is Present");
+			dailyWage = WAGE_PER_HR * FULL_DAY_HR ;
+			System.out.println("EMPLOYEE WAGE :"+dailyWage);
+			
 		}
 
 	}
