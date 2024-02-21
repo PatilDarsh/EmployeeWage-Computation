@@ -4,7 +4,7 @@ import java.util.Random;
 
 class EmployeeWageComp
 {
-    public static void main(String[] args) {
+    
         
         int attendance;
         int employee_type;
@@ -16,6 +16,9 @@ class EmployeeWageComp
         final int PART_TIME_HR = 4;
         final int WAGE_PER_HR = 20;
         final int WORKING_DAYS = 20 ;
+        
+        public void employeeWageCalc()
+        {
         
         System.out.println(" Welcome to Employee Wage Computation Program ");
         System.out.println("_________________________________________________");
@@ -59,4 +62,8 @@ class EmployeeWageComp
         }
         System.out.println("Total Monthly Wage :"+total_wage);
     }
+        public static void main(String[] args) {
+        	EmployeeWageComp employeeWageComp = new EmployeeWageComp();
+        	employeeWageComp.employeeWageCalc();
+        }
 }
