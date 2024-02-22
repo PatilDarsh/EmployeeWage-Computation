@@ -1,5 +1,4 @@
 package com.infogalaxy.employeewagecomp;
-
 import java.util.Random;
 
 class EmployeeWageComp
@@ -14,8 +13,9 @@ class EmployeeWageComp
         int total_working_days =1;
         final int FULL_TIME_HR = 8;
         final int PART_TIME_HR = 4;
-        final int WAGE_PER_HR = 20;
-        final int WORKING_DAYS = 20 ;
+        int wage_per_hr;
+        int working_days;
+        int working_hr_month;
         
         public void employeeWageCalc()
         {
@@ -24,7 +24,7 @@ class EmployeeWageComp
         System.out.println("_________________________________________________");
         
         
-        while(total_working_hr <= 100 && total_working_days <= 20)
+        while(total_working_hr <= working_hr_month && total_working_days <= working_days)
         {
         	System.out.println("Day:"+total_working_days);
         	Random random = new Random();
@@ -43,12 +43,12 @@ class EmployeeWageComp
                 {
                 case 0:
                 	System.out.println("Employee is Part Time");
-                	dailyWage = WAGE_PER_HR * PART_TIME_HR ;
+                	dailyWage = wage_per_hr * PART_TIME_HR ;
                 	total_working_hr += PART_TIME_HR;
                 	break;
                 case 1:
                 	System.out.println("Employee is Full Time");
-                	dailyWage = WAGE_PER_HR * FULL_TIME_HR ;
+                	dailyWage = wage_per_hr * FULL_TIME_HR ;
                 	total_working_hr += FULL_TIME_HR ;
                 	break;
                 }
@@ -62,8 +62,21 @@ class EmployeeWageComp
         }
         System.out.println("Total Monthly Wage :"+total_wage);
     }
-        public static void main(String[] args) {
-        	EmployeeWageComp employeeWageComp = new EmployeeWageComp();
+        
+        public EmployeeWageComp(int wage_per_hr, int working_days, int working_hr_month) {
+			super();
+			this.wage_per_hr = wage_per_hr;
+			this.working_days = working_days;
+			this.working_hr_month = working_hr_month;
+		}
+
+		public static void main(String[] args) {
+        	EmployeeWageComp employeeWageComp = new EmployeeWageComp(22,18,80);
         	employeeWageComp.employeeWageCalc();
+        	
+        	System.out.println("*************************************************");
+        	
+        	EmployeeWageComp employeeWageComp2 = new EmployeeWageComp(30, 25, 60);
+        	employeeWageComp2.employeeWageCalc();
         }
 }
